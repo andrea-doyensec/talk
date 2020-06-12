@@ -1,0 +1,15 @@
+talk:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: pompel.me
+      user: postgres
+      pass: Pass2020!
+      port: 5432
+      dbname: postgres
+      schema: playground
+      threads: 1
+
+config:
+  partial_parse: True
