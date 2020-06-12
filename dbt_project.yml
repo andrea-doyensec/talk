@@ -20,3 +20,5 @@ clean-targets:
 models:
   talk:
     materialized: view
+
+modules-path: '/tmp'
